@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="start">
+        <name>
+          <text>start</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="end">
+        <name>
+          <text>end</text>
+        </name>
+      </place>
+      <transition id="Release C">
+        <name>
+          <text>Release C</text>
+        </name>
+      </transition>
+      <transition id="Release A">
+        <name>
+          <text>Release A</text>
+        </name>
+      </transition>
+      <transition id="IV Liquid">
+        <name>
+          <text>IV Liquid</text>
+        </name>
+      </transition>
+      <transition id="Return ER">
+        <name>
+          <text>Return ER</text>
+        </name>
+      </transition>
+      <transition id="IV Antibiotics">
+        <name>
+          <text>IV Antibiotics</text>
+        </name>
+      </transition>
+      <transition id="Admission IC">
+        <name>
+          <text>Admission IC</text>
+        </name>
+      </transition>
+      <transition id="Release D">
+        <name>
+          <text>Release D</text>
+        </name>
+      </transition>
+      <transition id="Release B">
+        <name>
+          <text>Release B</text>
+        </name>
+      </transition>
+      <transition id="Release E">
+        <name>
+          <text>Release E</text>
+        </name>
+      </transition>
+      <arc id="1832493341856" source="start" target="Release D"/>
+      <arc id="1832493340608" source="start" target="Admission IC"/>
+      <arc id="1832470276512" source="Release C" target="end"/>
+      <arc id="1832470276896" source="Admission IC" target="end"/>
+      <arc id="1832470276800" source="Release A" target="end"/>
+      <arc id="1832470276704" source="Release B" target="end"/>
+      <arc id="1832470275744" source="Return ER" target="end"/>
+      <arc id="1832470275456" source="Release E" target="end"/>
+      <arc id="1832470275168" source="IV Antibiotics" target="end"/>
+      <arc id="1832493341808" source="start" target="Release C"/>
+      <arc id="1832470276080" source="start" target="Release B"/>
+      <arc id="1832470275984" source="start" target="Release A"/>
+      <arc id="1832470275888" source="start" target="IV Liquid"/>
+      <arc id="1832470276368" source="start" target="Release E"/>
+      <arc id="1832470276944" source="start" target="IV Antibiotics"/>
+      <arc id="1832470276560" source="Release D" target="end"/>
+      <arc id="1832470276752" source="IV Liquid" target="end"/>
+    </page>
+  </net>
+</pnml>

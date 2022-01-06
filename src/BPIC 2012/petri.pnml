@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="start">
+        <name>
+          <text>start</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'W_Wijzigen contractgegevens', 'A_CANCELLED', 'A_DECLINED'})">
+        <name>
+          <text>({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'W_Wijzigen contractgegevens', 'A_CANCELLED', 'A_DECLINED'})</text>
+        </name>
+      </place>
+      <place id="end">
+        <name>
+          <text>end</text>
+        </name>
+      </place>
+      <place id="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'O_DECLINED', 'W_Wijzigen contractgegevens', 'A_CANCELLED'})">
+        <name>
+          <text>({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'O_DECLINED', 'W_Wijzigen contractgegevens', 'A_CANCELLED'})</text>
+        </name>
+      </place>
+      <transition id="O_DECLINED">
+        <name>
+          <text>O_DECLINED</text>
+        </name>
+      </transition>
+      <transition id="W_Afhandelen leads">
+        <name>
+          <text>W_Afhandelen leads</text>
+        </name>
+      </transition>
+      <transition id="O_CANCELLED">
+        <name>
+          <text>O_CANCELLED</text>
+        </name>
+      </transition>
+      <transition id="O_SENT_BACK">
+        <name>
+          <text>O_SENT_BACK</text>
+        </name>
+      </transition>
+      <transition id="W_Valideren aanvraag">
+        <name>
+          <text>W_Valideren aanvraag</text>
+        </name>
+      </transition>
+      <transition id="A_REGISTERED">
+        <name>
+          <text>A_REGISTERED</text>
+        </name>
+      </transition>
+      <transition id="A_APPROVED">
+        <name>
+          <text>A_APPROVED</text>
+        </name>
+      </transition>
+      <transition id="A_CANCELLED">
+        <name>
+          <text>A_CANCELLED</text>
+        </name>
+      </transition>
+      <transition id="W_Beoordelen fraude">
+        <name>
+          <text>W_Beoordelen fraude</text>
+        </name>
+      </transition>
+      <transition id="W_Wijzigen contractgegevens">
+        <name>
+          <text>W_Wijzigen contractgegevens</text>
+        </name>
+      </transition>
+      <transition id="A_DECLINED">
+        <name>
+          <text>A_DECLINED</text>
+        </name>
+      </transition>
+      <transition id="O_SELECTED">
+        <name>
+          <text>O_SELECTED</text>
+        </name>
+      </transition>
+      <transition id="W_Nabellen incomplete dossiers">
+        <name>
+          <text>W_Nabellen incomplete dossiers</text>
+        </name>
+      </transition>
+      <transition id="A_FINALIZED">
+        <name>
+          <text>A_FINALIZED</text>
+        </name>
+      </transition>
+      <transition id="A_ACTIVATED">
+        <name>
+          <text>A_ACTIVATED</text>
+        </name>
+      </transition>
+      <transition id="O_ACCEPTED">
+        <name>
+          <text>O_ACCEPTED</text>
+        </name>
+      </transition>
+      <arc id="2076323339904" source="start" target="A_DECLINED"/>
+      <arc id="2076326789376" source="W_Valideren aanvraag" target="end"/>
+      <arc id="2076326790144" source="O_CANCELLED" target="end"/>
+      <arc id="2076326789760" source="W_Beoordelen fraude" target="end"/>
+      <arc id="2076326790528" source="A_FINALIZED" target="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'O_DECLINED', 'W_Wijzigen contractgegevens', 'A_CANCELLED'})"/>
+      <arc id="2076326790912" source="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'O_DECLINED', 'W_Wijzigen contractgegevens', 'A_CANCELLED'})" target="A_CANCELLED"/>
+      <arc id="2076326791296" source="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'W_Wijzigen contractgegevens', 'A_CANCELLED', 'A_DECLINED'})" target="O_SENT_BACK"/>
+      <arc id="2076323339808" source="start" target="W_Beoordelen fraude"/>
+      <arc id="2076326789280" source="W_Afhandelen leads" target="end"/>
+      <arc id="2076326790432" source="W_Nabellen incomplete dossiers" target="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'O_DECLINED', 'W_Wijzigen contractgegevens', 'A_CANCELLED'})"/>
+      <arc id="2076326789664" source="A_REGISTERED" target="end"/>
+      <arc id="2076326790048" source="W_Nabellen incomplete dossiers" target="end"/>
+      <arc id="2076326790816" source="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'O_DECLINED', 'W_Wijzigen contractgegevens', 'A_CANCELLED'})" target="W_Wijzigen contractgegevens"/>
+      <arc id="2076326791200" source="A_FINALIZED" target="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'W_Wijzigen contractgegevens', 'A_CANCELLED', 'A_DECLINED'})"/>
+      <arc id="2076326791584" source="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'W_Wijzigen contractgegevens', 'A_CANCELLED', 'A_DECLINED'})" target="A_DECLINED"/>
+      <arc id="2076323339712" source="start" target="A_CANCELLED"/>
+      <arc id="2076323340096" source="start" target="A_FINALIZED"/>
+      <arc id="2076326789184" source="O_DECLINED" target="end"/>
+      <arc id="2076326789568" source="O_SELECTED" target="end"/>
+      <arc id="2076326789952" source="A_FINALIZED" target="end"/>
+      <arc id="2076326790720" source="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'O_DECLINED', 'W_Wijzigen contractgegevens', 'A_CANCELLED'})" target="O_DECLINED"/>
+      <arc id="2076326791104" source="W_Nabellen incomplete dossiers" target="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'W_Wijzigen contractgegevens', 'A_CANCELLED', 'A_DECLINED'})"/>
+      <arc id="2076326791488" source="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'W_Wijzigen contractgegevens', 'A_CANCELLED', 'A_DECLINED'})" target="A_CANCELLED"/>
+      <arc id="2076323339616" source="start" target="W_Afhandelen leads"/>
+      <arc id="2076323340000" source="start" target="O_SELECTED"/>
+      <arc id="2076326789472" source="A_CANCELLED" target="end"/>
+      <arc id="2076326790240" source="W_Wijzigen contractgegevens" target="end"/>
+      <arc id="2076326789856" source="A_DECLINED" target="end"/>
+      <arc id="2076326790624" source="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'O_DECLINED', 'W_Wijzigen contractgegevens', 'A_CANCELLED'})" target="O_SENT_BACK"/>
+      <arc id="2076326791392" source="({'W_Nabellen incomplete dossiers', 'A_FINALIZED'}, {'O_SENT_BACK', 'W_Wijzigen contractgegevens', 'A_CANCELLED', 'A_DECLINED'})" target="W_Wijzigen contractgegevens"/>
+    </page>
+  </net>
+</pnml>

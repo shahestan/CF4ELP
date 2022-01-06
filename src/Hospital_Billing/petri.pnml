@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="start">
+        <name>
+          <text>start</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="({'NEW'}, {'CHANGE DIAGN'})">
+        <name>
+          <text>({'NEW'}, {'CHANGE DIAGN'})</text>
+        </name>
+      </place>
+      <place id="({'CODE OK'}, {'BILLED'})">
+        <name>
+          <text>({'CODE OK'}, {'BILLED'})</text>
+        </name>
+      </place>
+      <place id="end">
+        <name>
+          <text>end</text>
+        </name>
+      </place>
+      <place id="({'CHANGE DIAGN'}, {'CODE OK'})">
+        <name>
+          <text>({'CHANGE DIAGN'}, {'CODE OK'})</text>
+        </name>
+      </place>
+      <place id="({'NEW'}, {'CODE OK'})">
+        <name>
+          <text>({'NEW'}, {'CODE OK'})</text>
+        </name>
+      </place>
+      <place id="({'NEW'}, {'CODE NOK'})">
+        <name>
+          <text>({'NEW'}, {'CODE NOK'})</text>
+        </name>
+      </place>
+      <place id="({'NEW'}, {'BILLED'})">
+        <name>
+          <text>({'NEW'}, {'BILLED'})</text>
+        </name>
+      </place>
+      <place id="({'CHANGE DIAGN'}, {'CODE NOK'})">
+        <name>
+          <text>({'CHANGE DIAGN'}, {'CODE NOK'})</text>
+        </name>
+      </place>
+      <place id="({'CHANGE DIAGN'}, {'BILLED'})">
+        <name>
+          <text>({'CHANGE DIAGN'}, {'BILLED'})</text>
+        </name>
+      </place>
+      <place id="({'CODE NOK'}, {'BILLED', 'EMPTY'})">
+        <name>
+          <text>({'CODE NOK'}, {'BILLED', 'EMPTY'})</text>
+        </name>
+      </place>
+      <place id="({'CODE NOK'}, {'CODE OK', 'EMPTY'})">
+        <name>
+          <text>({'CODE NOK'}, {'CODE OK', 'EMPTY'})</text>
+        </name>
+      </place>
+      <transition id="REOPEN">
+        <name>
+          <text>REOPEN</text>
+        </name>
+      </transition>
+      <transition id="BILLED">
+        <name>
+          <text>BILLED</text>
+        </name>
+      </transition>
+      <transition id="CODE OK">
+        <name>
+          <text>CODE OK</text>
+        </name>
+      </transition>
+      <transition id="EMPTY">
+        <name>
+          <text>EMPTY</text>
+        </name>
+      </transition>
+      <transition id="NEW">
+        <name>
+          <text>NEW</text>
+        </name>
+      </transition>
+      <transition id="DELETE">
+        <name>
+          <text>DELETE</text>
+        </name>
+      </transition>
+      <transition id="CHANGE DIAGN">
+        <name>
+          <text>CHANGE DIAGN</text>
+        </name>
+      </transition>
+      <transition id="CODE NOK">
+        <name>
+          <text>CODE NOK</text>
+        </name>
+      </transition>
+      <arc id="2675040929296" source="({'NEW'}, {'CODE OK'})" target="CODE OK"/>
+      <arc id="2675040930064" source="CHANGE DIAGN" target="({'CHANGE DIAGN'}, {'CODE NOK'})"/>
+      <arc id="2675040928144" source="EMPTY" target="end"/>
+      <arc id="2675040928912" source="CODE OK" target="({'CODE OK'}, {'BILLED'})"/>
+      <arc id="2675040930448" source="({'CHANGE DIAGN'}, {'BILLED'})" target="BILLED"/>
+      <arc id="2675040930832" source="({'CODE NOK'}, {'BILLED', 'EMPTY'})" target="EMPTY"/>
+      <arc id="2675040931216" source="({'CODE NOK'}, {'CODE OK', 'EMPTY'})" target="EMPTY"/>
+      <arc id="2675040930352" source="CHANGE DIAGN" target="({'CHANGE DIAGN'}, {'BILLED'})"/>
+      <arc id="2675040929584" source="({'NEW'}, {'CODE NOK'})" target="CODE NOK"/>
+      <arc id="2675040928048" source="DELETE" target="end"/>
+      <arc id="2675040928432" source="({'NEW'}, {'CHANGE DIAGN'})" target="CHANGE DIAGN"/>
+      <arc id="2675040929200" source="NEW" target="({'NEW'}, {'CODE OK'})"/>
+      <arc id="2675040930736" source="({'CODE NOK'}, {'BILLED', 'EMPTY'})" target="BILLED"/>
+      <arc id="2675040931120" source="({'CODE NOK'}, {'CODE OK', 'EMPTY'})" target="CODE OK"/>
+      <arc id="2674875739968" source="start" target="NEW"/>
+      <arc id="2675040929488" source="NEW" target="({'NEW'}, {'CODE NOK'})"/>
+      <arc id="2675040928336" source="NEW" target="({'NEW'}, {'CHANGE DIAGN'})"/>
+      <arc id="2675040927952" source="BILLED" target="end"/>
+      <arc id="2675040928720" source="({'CHANGE DIAGN'}, {'CODE OK'})" target="CODE OK"/>
+      <arc id="2675040929872" source="({'NEW'}, {'BILLED'})" target="BILLED"/>
+      <arc id="2675040930640" source="CODE NOK" target="({'CODE NOK'}, {'BILLED', 'EMPTY'})"/>
+      <arc id="2675040931024" source="CODE NOK" target="({'CODE NOK'}, {'CODE OK', 'EMPTY'})"/>
+      <arc id="2675040929776" source="NEW" target="({'NEW'}, {'BILLED'})"/>
+      <arc id="2675040928624" source="CHANGE DIAGN" target="({'CHANGE DIAGN'}, {'CODE OK'})"/>
+      <arc id="2675040929008" source="({'CODE OK'}, {'BILLED'})" target="BILLED"/>
+      <arc id="2675040930160" source="({'CHANGE DIAGN'}, {'CODE NOK'})" target="CODE NOK"/>
+    </page>
+  </net>
+</pnml>
